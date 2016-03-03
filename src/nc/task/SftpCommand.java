@@ -138,12 +138,12 @@ public class SftpCommand {
 	public void download(String directory, String downloadFile,
 			String saveFile, ChannelSftp sftp) throws Exception{
 		try {
-			FileUtil.log("sftp upload start "+directory+"&&"+downloadFile);
+			FileUtil.log("sftp down start "+directory+"&&"+downloadFile);
 			sftp.cd(directory);
 			File file = new File(saveFile);
 			sftp.get(downloadFile, new FileOutputStream(file));
 			//sftp.get(downloadFile, new FileOutputStream(file),new SftpProgressMonitorImpl("sftp downlaod "+directory+"&&"+downloadFile+"&&"+saveFile));
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 		} catch (Exception e) {
 			FileUtil.log(e);
 			throw e;
