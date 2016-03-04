@@ -47,6 +47,7 @@ public class SftpdownCommand extends SftpCommand implements ITaskCommand {
     		ChannelSftp sftp = this.getChannelSftp(sshSession);
     		//初始化任务计数
 			SftpTaskEnv.getInstance().init();
+			createDir(todir);
     		downLoad(this.fromdir,this.todir,sftp);
     		
     		//等上5秒
